@@ -16,6 +16,14 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy</artifactId>
         </dependency>
+        <!-- AWT -->
+        <!-- org.apache.pdfbox.pdmodel.common.PDRectangle.toGeneralPath triggers
+        java.awt.geom.Path2D
+        -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-awt</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.quarkiverse.tika</groupId>
             <artifactId>quarkus-tika</artifactId>
