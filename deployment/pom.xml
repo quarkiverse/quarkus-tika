@@ -18,10 +18,6 @@
             <artifactId>quarkus-tika</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-awt-deployment</artifactId>
-        </dependency>
         <!-- the tika parsers depend on http-client -->
         <dependency>
             <groupId>io.quarkus</groupId>
