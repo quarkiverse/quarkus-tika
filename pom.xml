@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.tika</groupId>
     <artifactId>quarkus-tika-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     <name>Quarkus - Tika - Parent</name>
     <modules>
@@ -102,6 +102,6 @@
     </profiles>
 
   <scm>
-    <tag>1.0.0</tag>
+    <tag>1.0.1</tag>
   </scm>
 </project>
