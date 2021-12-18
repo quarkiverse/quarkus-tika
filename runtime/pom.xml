@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.tika</groupId>
         <artifactId>quarkus-tika-parent</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-tika</artifactId>
     <name>Quarkus - Tika - Runtime</name>
