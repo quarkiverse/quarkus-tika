@@ -25,7 +25,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>2.7.1.Final</quarkus.version>
 
-        <tika.version>1.27</tika.version>
+        <tika.version>1.28.4</tika.version>
         <ooxml-schemas.version>1.4</ooxml-schemas.version>
     </properties>
     <dependencyManagement>
