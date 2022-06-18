@@ -73,7 +73,7 @@ public class TikaParserTest {
                 .post("/parse/metadata")
                 .then()
                 .statusCode(200)
-                .body(containsString("X-Parsed-By"));
+                .body(containsString("X-TIKA:Parsed-By"));
 
     }
 

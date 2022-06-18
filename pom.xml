@@ -25,7 +25,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>2.7.1.Final</quarkus.version>
 
-        <tika.version>1.27</tika.version>
+        <tika.version>2.4.1</tika.version>
         <ooxml-schemas.version>1.4</ooxml-schemas.version>
     </properties>
     <dependencyManagement>
@@ -39,7 +39,7 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.tika</groupId>
-                <artifactId>tika-parsers</artifactId>
+                <artifactId>tika-parsers-standard-package</artifactId>
                 <version>${tika.version}</version>
                 <exclusions>
                     <exclusion>
@@ -91,6 +91,11 @@
                         <artifactId>jakarta.activation-api</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tika</groupId>
+               <artifactId>tika-core</artifactId>
+               <version>${tika.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.poi</groupId>
