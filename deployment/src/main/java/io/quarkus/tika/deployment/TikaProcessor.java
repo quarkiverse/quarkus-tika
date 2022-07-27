@@ -68,6 +68,13 @@ public class TikaProcessor {
     public void registerRuntimeInitializedClasses(BuildProducer<RuntimeInitializedClassBuildItem> resource) {
         //org.apache.tika.parser.pdf.PDFParser (https://issues.apache.org/jira/browse/PDFBOX-4548)
         resource.produce(new RuntimeInitializedClassBuildItem("org.apache.pdfbox.pdmodel.font.PDType1Font"));
+        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.pdfbox.text.LegacyPDFStreamEngine"));
+    }
+
+    @BuildStep
+    public void registerRuntimeInitializedOOXmlClasses(BuildProducer<RuntimeInitializedClassBuildItem> resource) {
+        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.tika.parser.microsoft.ooxml.OOXMLParser"));
+        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.poi.util.RandomSingleton"));
     }
 
     @BuildStep
