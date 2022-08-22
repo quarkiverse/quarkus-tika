@@ -1,0 +1,8 @@
+name: tika-codestart
+ref: tika
+type: code
+tags: extension-codestart
+metadata:
+  title: Tika
+  description: Start coding with Quarkus & Tika from this command line parser app.
+  related-guide-section: https://quarkiverse.github.io/quarkiverse-docs/quarkus-tika/dev/index.html

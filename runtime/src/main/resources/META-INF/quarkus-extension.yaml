@@ -11,3 +11,8 @@ metadata:
   status: "stable"
   config:
   - "quarkus.tika."
+  codestart:
+    name: "tika"
+    languages:
+      - "java"
+    artifact: "io.quarkiverse.tika:quarkus-tika:codestarts:jar:${project.version}"
