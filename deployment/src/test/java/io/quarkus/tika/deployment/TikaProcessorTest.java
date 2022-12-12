@@ -46,7 +46,8 @@ public class TikaProcessorTest {
     public void testResolvableCustomAbbreviation() throws Exception {
         Set<String> names = getParserConfig(null, "pdf,opendoc", Collections.emptyMap(),
                 Collections.singletonMap("opendoc",
-                        "org.apache.tika.parser.odf.OpenDocumentParser")).keySet();
+                        "org.apache.tika.parser.odf.OpenDocumentParser"))
+                .keySet();
         assertEquals(2, names.size());
         assertTrue(names.contains("org.apache.tika.parser.pdf.PDFParser"));
         assertTrue(names.contains("org.apache.tika.parser.odf.OpenDocumentParser"));
