@@ -44,17 +44,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>ooxml-schemas</artifactId>
-                <version>${ooxml-schemas.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.xmlbeans</groupId>
-                        <artifactId>xmlbeans</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
