@@ -106,9 +106,9 @@ public class TikaProcessor {
         recorder.initTikaParser(beanContainer.getValue(), configuration, tikaXmlConfiguration);
     }
 
-    private static List<String> getProviderNames(String serviceProviderName) throws Exception {
-        return new ArrayList<>(ServiceUtil.classNamesNamedIn(TikaProcessor.class.getClassLoader(),
-                "META-INF/services/" + serviceProviderName));
+    private static Set<String> getProviderNames(String serviceProviderName) throws Exception {
+        return ServiceUtil.classNamesNamedIn(TikaProcessor.class.getClassLoader(),
+                "META-INF/services/" + serviceProviderName);
     }
 
     public static Map<String, List<TikaParserParameter>> getSupportedParserConfig(Optional<String> tikaConfigPath,
@@ -116,7 +116,7 @@ public class TikaProcessor {
             Map<String, Map<String, String>> parserParamMaps,
             Map<String, String> parserAbbreviations) throws Exception {
         Predicate<String> pred = p -> !NOT_NATIVE_READY_PARSERS.contains(p);
-        List<String> providerNames = getProviderNames(Parser.class.getName());
+        Set<String> providerNames = getProviderNames(Parser.class.getName());
         if (tikaConfigPath.isPresent() || !requiredParsers.isPresent()) {
             return providerNames.stream().filter(pred).collect(Collectors.toMap(Function.identity(),
                     p -> Collections.<TikaParserParameter> emptyList()));
