@@ -1,6 +1,6 @@
 # Quarkus - Tika
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.tika/quarkus-tika)
@@ -26,6 +26,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sberyozkin"><img src="https://avatars.githubusercontent.com/u/467639?v=4?s=100" width="100px;" alt="sberyozkin"/><br /><sub><b>sberyozkin</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=sberyozkin" title="Code">💻</a> <a href="#maintenance-sberyozkin" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://jamesnetherton.github.io/"><img src="https://avatars.githubusercontent.com/u/4721408?v=4?s=100" width="100px;" alt="James Netherton"/><br /><sub><b>James Netherton</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=jamesnetherton" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
