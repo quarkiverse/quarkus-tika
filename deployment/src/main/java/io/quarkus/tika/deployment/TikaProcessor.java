@@ -196,6 +196,9 @@ public class TikaProcessor {
     }
 
     private static String capitalize(String paramName) {
+        if (paramName == null || paramName.length() == 0) {
+            return paramName;
+        }
         char[] chars = paramName.toCharArray();
         chars[0] = Character.toUpperCase(chars[0]);
         return new String(chars);
@@ -237,9 +240,9 @@ public class TikaProcessor {
     }
 
     public static class TikaParserParameter {
-        private String name;
-        private String value;
-        private String type;
+        private final String name;
+        private final String value;
+        private final String type;
 
         public TikaParserParameter(String name, String value, String type) {
             this.name = name;
