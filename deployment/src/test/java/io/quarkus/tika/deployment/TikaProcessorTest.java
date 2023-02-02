@@ -119,8 +119,8 @@ public class TikaProcessorTest {
 
     @Test
     public void testUnhyphenation() {
-        assertEquals("sortByPosition", TikaProcessor.unhyphenate("sort-by-position"));
-        assertEquals("position", TikaProcessor.unhyphenate("position"));
+        assertEquals("sortByPosition", TikaProcessor.camelCase("sort-by-position"));
+        assertEquals("position", TikaProcessor.camelCase("position"));
     }
 
     private Set<String> getParserNames(String tikaConfigPath, String parsers) throws Exception {
