@@ -4,9 +4,6 @@ import org.graalvm.nativeimage.ImageSingletons;
 import org.graalvm.nativeimage.hosted.Feature;
 import org.graalvm.nativeimage.impl.RuntimeClassInitializationSupport;
 
-import com.oracle.svm.core.annotate.AutomaticFeature;
-
-@AutomaticFeature
 public class TikaFeature implements Feature {
     @Override
     public void afterRegistration(AfterRegistrationAccess access) {
@@ -16,5 +13,10 @@ public class TikaFeature implements Feature {
         runtimeInit.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
         runtimeInit.initializeAtRunTime("org.apache.poi.hssf.util", reason);
         runtimeInit.initializeAtRunTime("org.apache.poi.ss.format", reason);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Quarkus runtime initialization for Apache Tika";
     }
 }
