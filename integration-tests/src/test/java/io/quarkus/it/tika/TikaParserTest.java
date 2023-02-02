@@ -5,9 +5,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -34,7 +31,7 @@ public class TikaParserTest {
     public void testGetTextFromPdfFormatWithFonts() throws Exception {
         given()
                 .when().header("Content-Type", "application/pdf")
-                .body(readQuarkusFile("americanexpress.pdf"))
+                .body(getClass().getClassLoader().getResourceAsStream("americanexpress.pdf"))
                 .post("/parse/text")
                 .then()
                 .statusCode(200)
@@ -59,7 +56,7 @@ public class TikaParserTest {
     private void checkText(String contentType, String extension) throws Exception {
         given()
                 .when().header("Content-Type", contentType)
-                .body(readQuarkusFile("quarkus." + extension))
+                .body(getClass().getClassLoader().getResourceAsStream("quarkus." + extension).readAllBytes())
                 .post("/parse/text")
                 .then()
                 .statusCode(200)
@@ -69,28 +66,11 @@ public class TikaParserTest {
     private void checkMetadata(String contentType, String extension) throws Exception {
         given()
                 .when().header("Content-Type", contentType)
-                .body(readQuarkusFile("quarkus." + extension))
+                .body(getClass().getClassLoader().getResourceAsStream("quarkus." + extension))
                 .post("/parse/metadata")
                 .then()
                 .statusCode(200)
-                .body(containsString("X-Parsed-By"));
+                .body(containsString("X-TIKA:Parsed-By"));
 
     }
-
-    private byte[] readQuarkusFile(String fileName) throws Exception {
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
-            return readBytes(is);
-        }
-    }
-
-    static byte[] readBytes(InputStream is) throws Exception {
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        byte[] buffer = new byte[4096];
-        int len;
-        while ((len = is.read(buffer)) != -1) {
-            os.write(buffer, 0, len);
-        }
-        return os.toByteArray();
-    }
-
 }
