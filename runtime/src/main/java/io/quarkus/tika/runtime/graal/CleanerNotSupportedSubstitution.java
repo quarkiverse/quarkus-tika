@@ -19,7 +19,7 @@ public final class CleanerNotSupportedSubstitution {
 
     /**
      * Reference to a BufferCleaner that does unmapping.
-     * 
+     *
      * @return {@code null} if not supported.
      */
     public static org.apache.poi.poifs.nio.CleanerUtil.BufferCleaner getCleaner() {

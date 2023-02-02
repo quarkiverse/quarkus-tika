@@ -30,14 +30,14 @@ public class TikaConfiguration {
      * Only PDF and OpenDocument format parsers can be listed using the reserved 'pdf' and 'odf' abbreviations.
      * Custom class name abbreviations have to be used for all other parsers.
      * For example:
-     * 
+     *
      * <pre>
      * // Only PDF parser is required:
      * quarkus.tika.parsers = pdf
      * // Only PDF and OpenDocument parsers are required:
      * quarkus.tika.parsers = pdf,odf
      * </pre>
-     * 
+     *
      * This property will have no effect if the `tikaConfigPath' property has been set.
      */
     @ConfigItem
