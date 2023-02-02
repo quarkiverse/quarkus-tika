@@ -8,6 +8,7 @@ import static org.hamcrest.CoreMatchers.startsWith;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
+import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,7 @@ public class TikaPdfInvoiceTest {
     public void testGetPlainTextFromInvoice() throws Exception {
         given()
                 .when().header("Content-Type", "application/pdf")
-                .body(readTestFile("invoice.pdf"))
+                .body(getClass().getClassLoader().getResourceAsStream("invoice.pdf"))
                 .post("/invoice/text")
                 .then()
                 .statusCode(200)
@@ -30,23 +31,7 @@ public class TikaPdfInvoiceTest {
                         new OrderCheckingMatcher()));
     }
 
-    private byte[] readTestFile(String fileName) throws Exception {
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
-            return readBytes(is);
-        }
-    }
-
-    static byte[] readBytes(InputStream is) throws Exception {
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        byte[] buffer = new byte[4096];
-        int len;
-        while ((len = is.read(buffer)) != -1) {
-            os.write(buffer, 0, len);
-        }
-        return os.toByteArray();
-    }
-
-    private static class OrderCheckingMatcher implements Matcher<String> {
+    private static class OrderCheckingMatcher extends BaseMatcher<String> {
         int from;
         int to;
 
@@ -65,10 +50,6 @@ public class TikaPdfInvoiceTest {
         @Override
         public void describeMismatch(Object item, Description mismatchDescription) {
             mismatchDescription.appendText("The invoice does not have From preceeding To");
-        }
-
-        @Override
-        public void _dont_implement_Matcher___instead_extend_BaseMatcher_() {
         }
     }
 }

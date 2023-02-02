@@ -39,20 +39,18 @@ public class TikaProcessor {
 
     private static final String FEATURE = "tika";
 
-    private static final Set<String> NOT_NATIVE_READY_PARSERS = Arrays.stream(new String[] {
+    private static final Set<String> NOT_NATIVE_READY_PARSERS = Set.of(
             "org.apache.tika.parser.mat.MatParser",
             "org.apache.tika.parser.journal.GrobidRESTParser",
             "org.apache.tika.parser.journal.JournalParser",
             "org.apache.tika.parser.jdbc.SQLite3Parser",
             "org.apache.tika.parser.mail.RFC822Parser",
             "org.apache.tika.parser.pkg.CompressorParser",
-            "org.apache.tika.parser.geo.topic.GeoParser"
-    }).collect(Collectors.toSet());
+            "org.apache.tika.parser.geo.topic.GeoParser");
 
-    private static final Map<String, String> PARSER_ABBREVIATIONS = Arrays.stream(new String[][] {
-            { "pdf", "org.apache.tika.parser.pdf.PDFParser" },
-            { "odf", "org.apache.tika.parser.odf.OpenDocumentParser" }
-    }).collect(Collectors.toMap(kv -> kv[0], kv -> kv[1]));
+    private static final Map<String, String> PARSER_ABBREVIATIONS = Map.of(
+            "pdf", "org.apache.tika.parser.pdf.PDFParser",
+            "odf", "org.apache.tika.parser.odf.OpenDocumentParser");
 
     @BuildStep
     FeatureBuildItem feature() {
