@@ -25,6 +25,7 @@ import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.annotations.ExecutionTime;
 import io.quarkus.deployment.annotations.Record;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
+import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceDirectoryBuildItem;
@@ -67,6 +68,14 @@ public class TikaProcessor {
     @BuildStep
     AdditionalBeanBuildItem beans() {
         return AdditionalBeanBuildItem.unremovableOf(TikaParserProducer.class);
+    }
+
+    /**
+     * Prevents the java.io.UnsupportedEncodingException: windows-1252 error in native mode
+     */
+    @BuildStep
+    NativeImageEnableAllCharsetsBuildItem enableAllCharsets() {
+        return new NativeImageEnableAllCharsetsBuildItem();
     }
 
     @BuildStep
@@ -124,15 +133,15 @@ public class TikaProcessor {
             Map<String, String> parserAbbreviations) throws Exception {
         Predicate<String> pred = p -> !NOT_NATIVE_READY_PARSERS.contains(p);
         Set<String> providerNames = getProviderNames(Parser.class.getName());
-        if (tikaConfigPath.isPresent() || !requiredParsers.isPresent()) {
+        if (tikaConfigPath.isPresent() || requiredParsers.isEmpty()) {
             return providerNames.stream().filter(pred).collect(Collectors.toMap(Function.identity(),
                     p -> Collections.<TikaParserParameter> emptyList()));
         } else {
-            List<String> abbreviations = Arrays.stream(requiredParsers.get().split(",")).map(s -> s.trim())
+            List<String> abbreviations = Arrays.stream(requiredParsers.get().split(",")).map(String::trim)
                     .collect(Collectors.toList());
             Map<String, String> fullNamesAndAbbreviations = abbreviations.stream()
                     .collect(Collectors.toMap(p -> getParserNameFromConfig(p, parserAbbreviations), Function.identity()));
-            return providerNames.stream().filter(pred).filter(p -> fullNamesAndAbbreviations.containsKey(p))
+            return providerNames.stream().filter(pred).filter(fullNamesAndAbbreviations::containsKey)
                     .collect(Collectors.toMap(Function.identity(),
                             p -> getParserConfig(p, parserParamMaps.get(fullNamesAndAbbreviations.get(p)))));
         }
@@ -170,7 +179,7 @@ public class TikaProcessor {
         List<TikaParserParameter> parserParams = new LinkedList<>();
         if (parserParamMap != null) {
             for (Map.Entry<String, String> entry : parserParamMap.entrySet()) {
-                String paramName = unhyphenate(entry.getKey());
+                String paramName = camelCase(entry.getKey());
                 String paramType = getParserParamType(parserName, paramName);
                 parserParams.add(new TikaParserParameter(paramName, entry.getValue(), paramType));
             }
@@ -193,7 +202,7 @@ public class TikaProcessor {
     }
 
     // Convert a property name such as "sort-by-position" to "sortByPosition"
-    public static String unhyphenate(String paramName) {
+    public static String camelCase(String paramName) {
         StringBuilder sb = new StringBuilder();
         String[] words = paramName.split("-");
         for (int i = 0; i < words.length; i++) {
