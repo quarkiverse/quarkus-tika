@@ -26,7 +26,8 @@
         <quarkus.version>2.16.1.Final</quarkus.version>
 
         <tika.version>2.6.0</tika.version>
-        <ooxml-schemas.version>1.4</ooxml-schemas.version>
+        <poi-ooxml-full.version>5.2.2</poi-ooxml-full.version>
+        <jansi.version>1.18</jansi.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -43,6 +44,16 @@
                 <version>${tika.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-full</artifactId>
+                <version>${poi-ooxml-full.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.fusesource.jansi</groupId>
+                <artifactId>jansi</artifactId>
+                <version>1.18</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
