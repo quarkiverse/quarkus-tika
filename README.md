@@ -4,6 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.tika/quarkus-tika)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/quarkiverse/quarkus-tika/build.yml?style=for-the-badge)
 
 ## Introduction
 
