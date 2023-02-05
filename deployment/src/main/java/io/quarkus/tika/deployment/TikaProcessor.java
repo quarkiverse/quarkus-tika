@@ -86,12 +86,6 @@ public class TikaProcessor {
     }
 
     @BuildStep
-    public void registerRuntimeInitializedOOXmlClasses(BuildProducer<RuntimeInitializedClassBuildItem> resource) {
-        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.tika.parser.microsoft.ooxml.OOXMLParser"));
-        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.poi.util.RandomSingleton"));
-    }
-
-    @BuildStep
     public void registerTikaCoreResources(BuildProducer<NativeImageResourceBuildItem> resource) {
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/mime/tika-mimetypes.xml"));
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/parser/external/tika-external-parsers.xml"));
