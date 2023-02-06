@@ -25,7 +25,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>2.16.1.Final</quarkus.version>
 
-        <quarkus.poi.version>1.0.0</quarkus.poi.version>
+        <quarkus.poi.version>1.0.2</quarkus.poi.version>
         <tika.version>2.6.0</tika.version>
         <jansi.version>1.18</jansi.version>
     </properties>
