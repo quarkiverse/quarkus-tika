@@ -9,10 +9,10 @@ import java.util.Map;
 
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.HttpHeaders;
+import org.apache.tika.metadata.TikaCoreProperties;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.Parser;
 import org.apache.tika.parser.RecursiveParserWrapper;
-import org.apache.tika.sax.AbstractRecursiveParserWrapperHandler;
 import org.apache.tika.sax.BasicContentHandlerFactory;
 import org.apache.tika.sax.RecursiveParserWrapperHandler;
 import org.apache.tika.sax.ToTextContentHandler;
@@ -92,12 +92,12 @@ public class TikaParser {
                     // The metadata list represents the main document and embedded content (text and metadata)
                     // The first metadata in the list represents the main document (outer) content
                     List<org.apache.tika.metadata.Metadata> allMetadata = rHandler.getMetadataList();
-                    String mainDocumentText = allMetadata.get(0).get(AbstractRecursiveParserWrapperHandler.TIKA_CONTENT);
+                    String mainDocumentText = allMetadata.get(0).get(TikaCoreProperties.TIKA_CONTENT);
 
                     // Embedded (inner) content starts from the index 1.
                     List<TikaContent> embeddedContent = new LinkedList<>();
                     for (int i = 1; i < allMetadata.size(); i++) {
-                        String embeddedText = allMetadata.get(i).get(AbstractRecursiveParserWrapperHandler.TIKA_CONTENT);
+                        String embeddedText = allMetadata.get(i).get(TikaCoreProperties.TIKA_CONTENT);
                         // the embedded text can be null if the given document is an image
                         // and no text recognition parser is enabled
                         if (embeddedText != null) {

@@ -1,7 +1,6 @@
 package io.quarkus.tika.deployment;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -113,8 +112,7 @@ public class TikaProcessor {
                 configuration.parsers,
                 configuration.parserOptions, configuration.parser);
         String tikaXmlConfiguration = generateTikaXmlConfiguration(parsers);
-
-        serviceProvider.produce(new ServiceProviderBuildItem(Parser.class.getName(), new ArrayList<>(parsers.keySet())));
+        serviceProvider.produce(new ServiceProviderBuildItem(Parser.class.getName(), parsers.keySet()));
         serviceProvider
                 .produce(new ServiceProviderBuildItem(Detector.class.getName(), getProviderNames(Detector.class.getName())));
         serviceProvider.produce(new ServiceProviderBuildItem(EncodingDetector.class.getName(),

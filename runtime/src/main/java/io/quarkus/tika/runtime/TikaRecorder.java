@@ -19,7 +19,7 @@ public class TikaRecorder {
 
     public void initTikaParser(BeanContainer container, TikaConfiguration config, String tikaXmlConfiguration) {
         TikaParser parser = initializeParser(config, tikaXmlConfiguration);
-        TikaParserProducer producer = container.instance(TikaParserProducer.class);
+        TikaParserProducer producer = container.beanInstance(TikaParserProducer.class);
         producer.initialize(parser);
     }
 

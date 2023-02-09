@@ -11,8 +11,6 @@ public class TikaFeature implements Feature {
         final String reason = "Quarkus run time init for Apache Tika";
         runtimeInit.initializeAtRunTime("org.apache.pdfbox.pdmodel", reason);
         runtimeInit.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
-        runtimeInit.initializeAtRunTime("org.apache.poi.hssf.util", reason);
-        runtimeInit.initializeAtRunTime("org.apache.poi.ss.format", reason);
     }
 
     @Override
