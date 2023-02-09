@@ -27,8 +27,7 @@
 
         <quarkus.poi.version>1.0.2</quarkus.poi.version>
         <vorbis.version>0.8</vorbis.version>
-        <tika.version>2.6.0</tika.version>
-        <jansi.version>1.18</jansi.version>
+        <tika.version>2.7.0</tika.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -43,11 +42,6 @@
                 <groupId>io.quarkiverse.poi</groupId>
                 <artifactId>quarkus-poi</artifactId>
                 <version>${quarkus.poi.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.fusesource.jansi</groupId>
-                <artifactId>jansi</artifactId>
-                <version>1.18</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.tika</groupId>
