@@ -32,7 +32,7 @@ a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parsers]]`lin
 --
 Comma separated list of the parsers which must be supported. 
 Most of the document formats recognized by Apache Tika are supported by default but it affects the application memory and native executable sizes. One can list only the required parsers in `tika-config.xml` to minimize a number of parsers loaded into the memory, but using this property is recommended to achieve both optimizations. 
-Either the abbreviated or full parser class names can be used. Only PDF and OpenDocument format parsers can be listed using the reserved 'pdf' and 'odf' abbreviations. Custom class name abbreviations have to be used for all other parsers. For example: // Only PDF parser is required: quarkus.tika.parsers = pdf // Only PDF and OpenDocument parsers are required: quarkus.tika.parsers = pdf,odf  This property will have no effect if the `tikaConfigPath' property has been set.
+Either the abbreviated or full parser class names can be used. Only PDF and OpenDocument format parsers can be listed using the reserved 'pdf' and 'odf' abbreviations. Custom class name abbreviations have to be used for all other parsers. For example:  // Only PDF parser is required: quarkus.tika.parsers = pdf // Only PDF and OpenDocument parsers are required: quarkus.tika.parsers = pdf,odf  This property will have no effect if the `tikaConfigPath' property has been set.
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++QUARKUS_TIKA_PARSERS+++[]
@@ -64,7 +64,7 @@ a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-option
 
 [.description]
 --
-Configuration of the individual parsers. For example: quarkus.tika.parsers = pdf,odf quarkus.tika.parser-options.pdf.sort-by-position = true
+Configuration of the individual parsers. For example:  quarkus.tika.parsers = pdf,odf quarkus.tika.parser-options.pdf.sort-by-position = true
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++QUARKUS_TIKA_PARSER_OPTIONS+++[]
@@ -80,7 +80,7 @@ a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-parser
 
 [.description]
 --
-Full parser class name for a given parser abbreviation. For example: quarkus.tika.parsers = classparser quarkus.tika.parser.classparser = org.apache.tika.parser.asm.ClassParser
+Full parser class name for a given parser abbreviation. For example:  quarkus.tika.parsers = classparser quarkus.tika.parser.classparser = org.apache.tika.parser.asm.ClassParser
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++QUARKUS_TIKA_PARSER+++[]
