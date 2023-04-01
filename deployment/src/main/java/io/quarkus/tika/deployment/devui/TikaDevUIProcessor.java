@@ -19,7 +19,7 @@ public class TikaDevUIProcessor {
         final CardPageBuildItem card = new CardPageBuildItem();
 
         final PageBuilder versionPage = Page.externalPageBuilder("Version")
-                .icon("font-awesome-solid:user-secret")
+                .icon("font-awesome-solid:tag")
                 .url("https://tika.apache.org/")
                 .doNotEmbed()
                 .staticLabel(Detector.class.getPackage().getImplementationVersion());
