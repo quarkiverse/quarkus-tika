@@ -18,7 +18,7 @@ public class TikaDevUIProcessor {
     void createVersion(BuildProducer<CardPageBuildItem> cardPageBuildItemBuildProducer) {
         final CardPageBuildItem card = new CardPageBuildItem();
 
-        final PageBuilder versionPage = Page.externalPageBuilder("Version")
+        final PageBuilder versionPage = Page.externalPageBuilder("Tika Version")
                 .icon("font-awesome-solid:tag")
                 .url("https://tika.apache.org/")
                 .doNotEmbed()
