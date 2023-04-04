@@ -26,7 +26,6 @@
         <quarkus.version>3.0.0.CR1</quarkus.version>
 
         <quarkus.poi.version>2.0.0.Beta2</quarkus.poi.version>
-        <vorbis.version>0.8</vorbis.version>
         <tika.version>2.7.0</tika.version>
     </properties>
     <dependencyManagement>
@@ -137,16 +136,6 @@
                 <groupId>org.apache.tika</groupId>
                 <artifactId>tika-parser-webarchive-module</artifactId>
                 <version>${tika.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.gagravarr</groupId>
-                <artifactId>vorbis-java-core</artifactId>
-                <version>${vorbis.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.gagravarr</groupId>
-                <artifactId>vorbis-java-tika</artifactId>
-                <version>${vorbis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
