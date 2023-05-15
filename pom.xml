@@ -26,7 +26,7 @@
         <quarkus.version>3.0.0.Final</quarkus.version>
 
         <quarkus.poi.version>2.0.1</quarkus.poi.version>
-        <tika.version>2.7.0</tika.version>
+        <tika.version>2.8.0</tika.version>
     </properties>
     <dependencyManagement>
         <dependencies>
