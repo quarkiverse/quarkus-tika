@@ -65,6 +65,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "gefloh",
+      "name": "Gerhard Flothow",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124285337?v=4",
+      "profile": "https://github.com/gefloh",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -72,5 +81,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "projectName": "quarkus-tika",
-  "projectOwner": "quarkiverse"
+  "projectOwner": "quarkiverse",
+  "commitType": "docs"
 }
