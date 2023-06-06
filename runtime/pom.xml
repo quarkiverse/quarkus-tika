@@ -65,6 +65,10 @@
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parser-html-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
             <artifactId>tika-parser-image-module</artifactId>
         </dependency>
         <dependency>
