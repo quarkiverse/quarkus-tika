@@ -94,6 +94,11 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parser-html-commons</artifactId>
+                <version>${tika.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
                 <artifactId>tika-parser-image-module</artifactId>
                 <version>${tika.version}</version>
             </dependency>
