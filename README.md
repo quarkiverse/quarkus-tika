@@ -34,6 +34,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://zhfeng.github.io/"><img src="https://avatars.githubusercontent.com/u/1246139?v=4?s=100" width="100px;" alt="Zheng Feng"/><br /><sub><b>Zheng Feng</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=zhfeng" title="Code">💻</a> <a href="#maintenance-zhfeng" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/gefloh"><img src="https://avatars.githubusercontent.com/u/124285337?v=4?s=100" width="100px;" alt="Gerhard Flothow"/><br /><sub><b>Gerhard Flothow</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=gefloh" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://thejavaguy.org/"><img src="https://avatars.githubusercontent.com/u/11942401?v=4?s=100" width="100px;" alt="Ivan Milosavljević"/><br /><sub><b>Ivan Milosavljević</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=TheJavaGuy" title="Documentation">📖</a></td>
+    </tr>
   </tbody>
 </table>
 
