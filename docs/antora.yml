@@ -1,5 +1,5 @@
 name: quarkus-tika
-title: Quarkus Tika
+title: Tika
 version: dev
 nav:
-- modules/ROOT/nav.adoc
+  - modules/ROOT/nav.adoc
