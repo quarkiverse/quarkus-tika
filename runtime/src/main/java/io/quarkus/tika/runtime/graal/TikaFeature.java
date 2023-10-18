@@ -1,16 +1,14 @@
 package io.quarkus.tika.runtime.graal;
 
-import org.graalvm.nativeimage.ImageSingletons;
 import org.graalvm.nativeimage.hosted.Feature;
-import org.graalvm.nativeimage.impl.RuntimeClassInitializationSupport;
+import org.graalvm.nativeimage.hosted.RuntimeClassInitialization;
 
 public class TikaFeature implements Feature {
     @Override
     public void afterRegistration(AfterRegistrationAccess access) {
-        final RuntimeClassInitializationSupport runtimeInit = ImageSingletons.lookup(RuntimeClassInitializationSupport.class);
         final String reason = "Quarkus run time init for Apache Tika";
-        runtimeInit.initializeAtRunTime("org.apache.pdfbox.pdmodel", reason);
-        runtimeInit.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
+        RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.pdmodel", reason);
+        RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
     }
 
     @Override
