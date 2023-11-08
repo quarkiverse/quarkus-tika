@@ -9,6 +9,7 @@ public class TikaFeature implements Feature {
         final String reason = "Quarkus run time init for Apache Tika";
         RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.pdmodel", reason);
         RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
+        RuntimeClassInitialization.initializeAtBuildTime(org.apache.pdfbox.rendering.ImageType.class, reason);
     }
 
     @Override
