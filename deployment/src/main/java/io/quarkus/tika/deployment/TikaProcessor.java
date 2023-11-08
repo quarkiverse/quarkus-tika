@@ -1,6 +1,7 @@
 package io.quarkus.tika.deployment;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -28,6 +29,7 @@ import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
 import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceDirectoryBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedClassBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ServiceProviderBuildItem;
 import io.quarkus.deployment.util.ServiceUtil;
@@ -88,6 +90,16 @@ public class TikaProcessor {
     public void registerTikaCoreResources(BuildProducer<NativeImageResourceBuildItem> resource) {
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/mime/tika-mimetypes.xml"));
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/parser/external/tika-external-parsers.xml"));
+    }
+
+    @BuildStep
+    void registerForReflection(BuildProducer<ReflectiveClassBuildItem> reflectiveClass) {
+
+        final List<String> classNames = new ArrayList<>();
+        classNames.add(org.apache.tika.parser.pdf.PDFParser.class.getName());
+        classNames.add(org.apache.tika.parser.pdf.PDFParserConfig.class.getName());
+        reflectiveClass.produce(
+                ReflectiveClassBuildItem.builder(classNames.toArray(new String[0])).methods(true).build());
     }
 
     @BuildStep
