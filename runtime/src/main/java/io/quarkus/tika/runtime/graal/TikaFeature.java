@@ -6,9 +6,17 @@ import org.graalvm.nativeimage.hosted.RuntimeClassInitialization;
 public class TikaFeature implements Feature {
     @Override
     public void afterRegistration(AfterRegistrationAccess access) {
-        final String reason = "Quarkus run time init for Apache Tika";
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.pdmodel", reason);
-        RuntimeClassInitialization.initializeAtRunTime("org.apache.pdfbox.rendering", reason);
+        RuntimeClassInitialization.initializeAtRunTime(
+                "org.apache.pdfbox.pdmodel",
+                "org.apache.pdfbox.rendering.GlyphCache",
+                "org.apache.pdfbox.rendering.GroupGraphics",
+                "org.apache.pdfbox.rendering.PDFRenderer",
+                "org.apache.pdfbox.rendering.PageDrawer",
+                "org.apache.pdfbox.rendering.PageDrawerParameters",
+                "org.apache.pdfbox.rendering.RenderDestination",
+                "org.apache.pdfbox.rendering.SoftMask",
+                "org.apache.pdfbox.rendering.TilingPaint",
+                "org.apache.pdfbox.rendering.TilingPaintFactory");
     }
 
     @Override
