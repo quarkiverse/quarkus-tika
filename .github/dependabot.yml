@@ -11,6 +11,7 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
+      - dependency-name: "io.quarkus:quarkus-bom"
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
@@ -18,3 +19,4 @@ updates:
     target-branch: "1.x"
     ignore:
       - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
+      - dependency-name: "io.quarkus:quarkus-bom"
