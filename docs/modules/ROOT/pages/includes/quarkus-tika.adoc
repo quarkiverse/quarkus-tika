@@ -12,6 +12,7 @@ h|Default
 
 a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.tika-config-path]]`link:#quarkus-tika_quarkus.tika.tika-config-path[quarkus.tika.tika-config-path]`
 
+
 [.description]
 --
 The resource path within the application artifact to the `tika-config.xml` file.
@@ -27,6 +28,7 @@ endif::add-copy-button-to-env-var[]
 
 
 a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parsers]]`link:#quarkus-tika_quarkus.tika.parsers[quarkus.tika.parsers]`
+
 
 [.description]
 --
@@ -57,6 +59,7 @@ endif::add-copy-button-to-env-var[]
 
 a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.append-embedded-content]]`link:#quarkus-tika_quarkus.tika.append-embedded-content[quarkus.tika.append-embedded-content]`
 
+
 [.description]
 --
 Controls how the content of the embedded documents is parsed. By default it is appended to the main document content. Setting this property to false makes the content of each of the embedded documents available separately.
@@ -72,6 +75,7 @@ endif::add-copy-button-to-env-var[]
 
 
 a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-options-parser-options]]`link:#quarkus-tika_quarkus.tika.parser-options-parser-options[quarkus.tika.parser-options]`
+
 
 [.description]
 --
@@ -93,6 +97,7 @@ endif::add-copy-button-to-env-var[]
 
 
 a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-parser]]`link:#quarkus-tika_quarkus.tika.parser-parser[quarkus.tika.parser]`
+
 
 [.description]
 --
