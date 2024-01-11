@@ -31,7 +31,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>3.2.9.Final</quarkus.version>
 
-        <quarkus.poi.version>2.0.4</quarkus.poi.version>
+        <quarkus.poi.version>2.0.5</quarkus.poi.version>
         <tika.version>2.9.1</tika.version>
     </properties>
     <dependencyManagement>
