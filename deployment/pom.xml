@@ -20,6 +20,11 @@
             <version>${quarkus.poi.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.pdfbox</groupId>
+            <artifactId>quarkus-pdfbox-deployment</artifactId>
+            <version>${quarkus.pdfbox.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.tika</groupId>
             <artifactId>quarkus-tika</artifactId>
             <version>${project.version}</version>

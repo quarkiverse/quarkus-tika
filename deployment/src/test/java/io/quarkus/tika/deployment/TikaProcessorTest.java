@@ -117,7 +117,7 @@ public class TikaProcessorTest {
                 "org.apache.tika.parser.microsoft.ooxml.OOXMLParser", "org.apache.tika.parser.csv.TextAndCSVParser",
                 "org.apache.tika.parser.apple.PListParser", "org.apache.tika.parser.asm.ClassParser",
                 "org.apache.tika.parser.font.AdobeFontMetricParser", "org.apache.tika.parser.xliff.XLIFF12Parser",
-                "org.apache.tika.parser.html.HtmlParser", "org.apache.tika.parser.font.TrueTypeParser",
+                "org.apache.tika.parser.html.JSoupParser", "org.apache.tika.parser.font.TrueTypeParser",
                 "org.apache.tika.parser.microsoft.WMFParser", "org.apache.tika.parser.http.HttpParser",
                 "org.apache.tika.parser.xliff.XLZParser", "org.apache.tika.parser.image.HeifParser",
                 "org.apache.tika.parser.image.TiffParser", "org.apache.tika.parser.dif.DIFParser",
@@ -151,7 +151,8 @@ public class TikaProcessorTest {
                 "org.apache.tika.parser.image.ImageParser", "org.apache.tika.parser.pdf.PDFParser",
                 "org.apache.tika.parser.odf.OpenDocumentParser", "org.apache.tika.parser.mp3.Mp3Parser",
                 "org.apache.tika.parser.wordperfect.QuattroProParser", "org.apache.tika.parser.crypto.TSDParser",
-                "org.apache.tika.parser.ocr.TesseractOCRParser" };
+                "org.apache.tika.parser.ocr.TesseractOCRParser", "org.apache.tika.parser.microsoft.pst.PSTMailItemParser",
+                "org.apache.tika.parser.executable.UniversalExecutableParser" };
         assertThat(getParserNames(null, null)).containsExactlyInAnyOrder(expected);
     }
 
@@ -165,7 +166,7 @@ public class TikaProcessorTest {
                 "org.apache.tika.parser.microsoft.ooxml.OOXMLParser", "org.apache.tika.parser.csv.TextAndCSVParser",
                 "org.apache.tika.parser.apple.PListParser", "org.apache.tika.parser.asm.ClassParser",
                 "org.apache.tika.parser.font.AdobeFontMetricParser", "org.apache.tika.parser.xliff.XLIFF12Parser",
-                "org.apache.tika.parser.html.HtmlParser", "org.apache.tika.parser.font.TrueTypeParser",
+                "org.apache.tika.parser.html.JSoupParser", "org.apache.tika.parser.font.TrueTypeParser",
                 "org.apache.tika.parser.microsoft.WMFParser", "org.apache.tika.parser.http.HttpParser",
                 "org.apache.tika.parser.xliff.XLZParser", "org.apache.tika.parser.image.HeifParser",
                 "org.apache.tika.parser.image.TiffParser", "org.apache.tika.parser.dif.DIFParser",
@@ -199,7 +200,8 @@ public class TikaProcessorTest {
                 "org.apache.tika.parser.image.ImageParser", "org.apache.tika.parser.pdf.PDFParser",
                 "org.apache.tika.parser.odf.OpenDocumentParser", "org.apache.tika.parser.mp3.Mp3Parser",
                 "org.apache.tika.parser.wordperfect.QuattroProParser", "org.apache.tika.parser.crypto.TSDParser",
-                "org.apache.tika.parser.ocr.TesseractOCRParser" };
+                "org.apache.tika.parser.ocr.TesseractOCRParser", "org.apache.tika.parser.microsoft.pst.PSTMailItemParser",
+                "org.apache.tika.parser.executable.UniversalExecutableParser" };
         assertThat(getParserNames("tika-config.xml", "pdf")).containsExactlyInAnyOrder(expected);
     }
 
