@@ -29,7 +29,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.version>3.2.9.Final</quarkus.version>
+        <quarkus.version>3.9.3</quarkus.version>
 
         <quarkus.poi.version>2.0.4</quarkus.poi.version>
         <tika.version>2.9.1</tika.version>
