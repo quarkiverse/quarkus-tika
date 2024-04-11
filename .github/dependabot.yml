@@ -12,6 +12,7 @@ updates:
     ignore:
       - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
       - dependency-name: "io.quarkus:quarkus-bom"
+      - dependency-name: "io.quarkus:quarkus-maven-plugin"
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
@@ -20,3 +21,4 @@ updates:
     ignore:
       - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
       - dependency-name: "io.quarkus:quarkus-bom"
+      - dependency-name: "io.quarkus:quarkus-maven-plugin"
