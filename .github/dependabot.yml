@@ -10,9 +10,9 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
       - dependency-name: "io.quarkus:quarkus-bom"
       - dependency-name: "io.quarkus:quarkus-maven-plugin"
+      - dependency-name: "io.quarkus:quarkus-extension-processor"
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
@@ -22,3 +22,4 @@ updates:
       - dependency-name: "org.apache.maven.plugins:maven-compiler-plugin"
       - dependency-name: "io.quarkus:quarkus-bom"
       - dependency-name: "io.quarkus:quarkus-maven-plugin"
+      - dependency-name: "io.quarkus:quarkus-extension-processor"
