@@ -13,11 +13,11 @@ import io.smallrye.config.WithDefault;
  */
 @ConfigMapping(prefix = "quarkus.tika")
 @ConfigRoot(phase = ConfigPhase.BUILD_AND_RUN_TIME_FIXED)
-public class TikaConfiguration {
+public interface TikaConfiguration {
     /**
      * The resource path within the application artifact to the {@code tika-config.xml} file.
      */
-    public Optional<String> tikaConfigPath;
+    Optional<String> tikaConfigPath;
 
     /**
      * Comma separated list of the parsers which must be supported.
@@ -41,7 +41,7 @@ public class TikaConfiguration {
      *
      * This property will have no effect if the `tikaConfigPath' property has been set.
      */
-    public Optional<String> parsers;
+    Optional<String> parsers;
 
     /**
      * Configuration of the individual parsers.
@@ -51,7 +51,7 @@ public class TikaConfiguration {
      * quarkus.tika.parsers = pdf,odf
      * quarkus.tika.parser-options.pdf.sort-by-position = true
      */
-    public Map<String, Map<String, String>> parserOptions;
+    Map<String, Map<String, String>> parserOptions;
 
     /**
      * Full parser class name for a given parser abbreviation.
@@ -61,7 +61,7 @@ public class TikaConfiguration {
      * quarkus.tika.parsers = classparser
      * quarkus.tika.parser.classparser = org.apache.tika.parser.asm.ClassParser
      */
-    public Map<String, String> parser;
+    Map<String, String> parser;
 
     /**
      * Controls how the content of the embedded documents is parsed.
@@ -70,5 +70,5 @@ public class TikaConfiguration {
      * available separately.
      */
     @WithDefault("true")
-    public boolean appendEmbeddedContent;
+    boolean appendEmbeddedContent;
 }
