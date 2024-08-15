@@ -3,19 +3,20 @@ package io.quarkus.tika.runtime;
 import java.util.Map;
 import java.util.Optional;
 
-import io.quarkus.runtime.annotations.ConfigItem;
 import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
+import io.smallrye.config.ConfigMapping;
+import io.smallrye.config.WithDefault;
 
 /**
  * Tika parser configuration
  */
+@ConfigMapping(prefix = "quarkus.tika")
 @ConfigRoot(phase = ConfigPhase.BUILD_AND_RUN_TIME_FIXED)
 public class TikaConfiguration {
     /**
      * The resource path within the application artifact to the {@code tika-config.xml} file.
      */
-    @ConfigItem
     public Optional<String> tikaConfigPath;
 
     /**
@@ -40,7 +41,6 @@ public class TikaConfiguration {
      *
      * This property will have no effect if the `tikaConfigPath' property has been set.
      */
-    @ConfigItem
     public Optional<String> parsers;
 
     /**
@@ -51,7 +51,6 @@ public class TikaConfiguration {
      * quarkus.tika.parsers = pdf,odf
      * quarkus.tika.parser-options.pdf.sort-by-position = true
      */
-    @ConfigItem
     public Map<String, Map<String, String>> parserOptions;
 
     /**
@@ -62,7 +61,6 @@ public class TikaConfiguration {
      * quarkus.tika.parsers = classparser
      * quarkus.tika.parser.classparser = org.apache.tika.parser.asm.ClassParser
      */
-    @ConfigItem
     public Map<String, String> parser;
 
     /**
@@ -71,6 +69,6 @@ public class TikaConfiguration {
      * Setting this property to false makes the content of each of the embedded documents
      * available separately.
      */
-    @ConfigItem(defaultValue = "true")
+    @WithDefault("true")
     public boolean appendEmbeddedContent;
 }
