@@ -16,6 +16,37 @@ It is a replacement for the `quarkus-tika` extension originally part of the Quar
 
 The documentation for this extension can be found [here](https://quarkiverse.github.io/quarkiverse-docs/quarkus-tika/dev/index.html).
 
+## Docker
+
+When building native images in Docker using the standard Quarkus Docker configuration files some additional features need to be
+installed to support Apache POI.  Specifically font information is not included in [Red Hat's ubi-minimal images](https://developers.redhat.com/products/rhel/ubi).  To install it
+simply add these lines to your `DockerFile.native` file:
+
+```shell
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9
+
+######################### Set up environment for POI #############################
+RUN microdnf update && microdnf install freetype fontconfig && microdnf clean all
+######################### Set up environment for POI #############################
+
+WORKDIR /work/
+RUN chown 1001 /work \
+    && chmod "g+rwX" /work \
+    && chown 1001:root /work
+# Shared objects to be dynamically loaded at runtime as needed,
+COPY --chown=1001:root target/*.properties target/*.so /work/
+COPY --chown=1001:root target/*-runner /work/application
+# Permissions fix for Windows
+RUN chmod "ugo+x" /work/application
+EXPOSE 8080
+USER 1001
+
+CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
+```
+
+> [!CAUTION]
+> Make sure `.dockerignore` does not exclude `.so` files!
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
