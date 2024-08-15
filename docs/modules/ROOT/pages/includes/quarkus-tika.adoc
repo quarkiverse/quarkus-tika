@@ -10,7 +10,7 @@ h|[[quarkus-tika_configuration]]link:#quarkus-tika_configuration[Configuration p
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.tika-config-path]]`link:#quarkus-tika_quarkus.tika.tika-config-path[quarkus.tika.tika-config-path]`
+a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus-tika-tika-config-path]]`link:#quarkus-tika_quarkus-tika-tika-config-path[quarkus.tika.tika-config-path]`
 
 
 [.description]
@@ -27,7 +27,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parsers]]`link:#quarkus-tika_quarkus.tika.parsers[quarkus.tika.parsers]`
+a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus-tika-parsers]]`link:#quarkus-tika_quarkus-tika-parsers[quarkus.tika.parsers]`
 
 
 [.description]
@@ -57,7 +57,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.append-embedded-content]]`link:#quarkus-tika_quarkus.tika.append-embedded-content[quarkus.tika.append-embedded-content]`
+a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus-tika-append-embedded-content]]`link:#quarkus-tika_quarkus-tika-append-embedded-content[quarkus.tika.append-embedded-content]`
 
 
 [.description]
@@ -74,7 +74,7 @@ endif::add-copy-button-to-env-var[]
 |`true`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-options-parser-options]]`link:#quarkus-tika_quarkus.tika.parser-options-parser-options[quarkus.tika.parser-options]`
+a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus-tika-parser-options-parser-options]]`link:#quarkus-tika_quarkus-tika-parser-options-parser-options[quarkus.tika.parser-options]`
 
 
 [.description]
@@ -96,7 +96,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus.tika.parser-parser]]`link:#quarkus-tika_quarkus.tika.parser-parser[quarkus.tika.parser]`
+a|icon:lock[title=Fixed at build time] [[quarkus-tika_quarkus-tika-parser-parser]]`link:#quarkus-tika_quarkus-tika-parser-parser[quarkus.tika.parser]`
 
 
 [.description]
