@@ -108,9 +108,9 @@ public class TikaProcessor {
     void initializeTikaParser(BeanContainerBuildItem beanContainer, TikaRecorder recorder,
             BuildProducer<ServiceProviderBuildItem> serviceProvider, TikaConfiguration configuration)
             throws Exception {
-        Map<String, List<TikaParserParameter>> parsers = getSupportedParserConfig(configuration.tikaConfigPath,
-                configuration.parsers,
-                configuration.parserOptions, configuration.parser);
+        Map<String, List<TikaParserParameter>> parsers = getSupportedParserConfig(configuration.tikaConfigPath(),
+                configuration.parsers(),
+                configuration.parserOptions(), configuration.parser());
         String tikaXmlConfiguration = generateTikaXmlConfiguration(parsers);
         serviceProvider.produce(new ServiceProviderBuildItem(Parser.class.getName(), parsers.keySet()));
         serviceProvider
@@ -134,10 +134,10 @@ public class TikaProcessor {
         Set<String> providerNames = getProviderNames(Parser.class.getName());
         if (tikaConfigPath.isPresent() || requiredParsers.isEmpty()) {
             return providerNames.stream().filter(pred).collect(Collectors.toMap(Function.identity(),
-                    p -> Collections.<TikaParserParameter> emptyList()));
+                    p -> Collections.emptyList()));
         } else {
             List<String> abbreviations = Arrays.stream(requiredParsers.get().split(",")).map(String::trim)
-                    .collect(Collectors.toList());
+                    .toList();
             Map<String, String> fullNamesAndAbbreviations = abbreviations.stream()
                     .collect(Collectors.toMap(p -> getParserNameFromConfig(p, parserAbbreviations), Function.identity()));
             return providerNames.stream().filter(pred).filter(fullNamesAndAbbreviations::containsKey)
@@ -211,7 +211,7 @@ public class TikaProcessor {
     }
 
     private static String capitalize(String paramName) {
-        if (paramName == null || paramName.length() == 0) {
+        if (paramName == null || paramName.isEmpty()) {
             return paramName;
         }
         char[] chars = paramName.toCharArray();
@@ -236,7 +236,7 @@ public class TikaProcessor {
             Class<?> parserClass = loadParserClass(parserName);
             Method[] methods = parserClass.getMethods();
             String setterMethodName = "set" + capitalize(paramName);
-            String paramType = null;
+            String paramType;
             for (Method method : methods) {
                 if (method.getName().equals(setterMethodName) && method.getParameterCount() == 1) {
                     paramType = method.getParameterTypes()[0].getSimpleName().toLowerCase();

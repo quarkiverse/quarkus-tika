@@ -36,20 +36,20 @@ public class TikaRecorder {
         // Create a native Tika Parser. AutoDetectParser is used by default but it is wrapped
         // by RecursiveParserWrapper if the appending of the embedded content is disabled
         Parser nativeParser = new AutoDetectParser(tikaConfig);
-        if (!config.appendEmbeddedContent) {
+        if (!config.appendEmbeddedContent()) {
             // the recursive parser will catch the embedded exceptions by default
             nativeParser = new RecursiveParserWrapper(nativeParser, true);
         }
-        return new TikaParser(nativeParser, config.appendEmbeddedContent);
+        return new TikaParser(nativeParser, config.appendEmbeddedContent());
     }
 
     private static InputStream getTikaConfigStream(TikaConfiguration config, String tikaXmlConfiguration) {
         // Load tika-config.xml resource
         InputStream is;
-        if (config.tikaConfigPath.isPresent()) {
-            is = Thread.currentThread().getContextClassLoader().getResourceAsStream(config.tikaConfigPath.get());
+        if (config.tikaConfigPath().isPresent()) {
+            is = Thread.currentThread().getContextClassLoader().getResourceAsStream(config.tikaConfigPath().get());
             if (is == null) {
-                final String errorMessage = "tika-config.xml can not be found at " + config.tikaConfigPath.get();
+                final String errorMessage = "tika-config.xml can not be found at " + config.tikaConfigPath().get();
                 throw new TikaParseException(errorMessage);
             }
         } else {
