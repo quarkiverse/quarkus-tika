@@ -27,7 +27,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <quarkus.version>3.14.2</quarkus.version>
 
-        <quarkus.poi.version>2.0.6</quarkus.poi.version>
+        <quarkus.poi.version>2.1.0</quarkus.poi.version>
         <tika.version>2.9.2</tika.version>
     </properties>
     <dependencyManagement>
