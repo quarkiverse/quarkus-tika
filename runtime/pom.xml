@@ -14,14 +14,14 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-mailer</artifactId>
-        </dependency>
         <!-- the tika parsers depend on http-client -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-apache-httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.angusmail</groupId>
+            <artifactId>quarkus-angus-mail</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.poi</groupId>
