@@ -20,8 +20,16 @@
             <artifactId>quarkus-apache-httpclient</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.angusmail</groupId>
+            <artifactId>quarkus-angus-mail</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.poi</groupId>
             <artifactId>quarkus-poi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.pdfbox</groupId>
+            <artifactId>quarkus-pdfbox</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
@@ -62,10 +70,6 @@
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parser-font-module</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tika</groupId>
-            <artifactId>tika-parser-html-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>

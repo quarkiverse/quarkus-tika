@@ -14,9 +14,19 @@
             <artifactId>quarkus-arc-deployment</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.angusmail</groupId>
+            <artifactId>quarkus-angus-mail-deployment</artifactId>
+            <version>${quarkus.angusmail.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.poi</groupId>
             <artifactId>quarkus-poi-deployment</artifactId>
             <version>${quarkus.poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.pdfbox</groupId>
+            <artifactId>quarkus-pdfbox-deployment</artifactId>
+            <version>${quarkus.pdfbox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.tika</groupId>

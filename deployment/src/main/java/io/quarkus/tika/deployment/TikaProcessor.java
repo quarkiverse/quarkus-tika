@@ -25,17 +25,13 @@ import io.quarkus.deployment.annotations.ExecutionTime;
 import io.quarkus.deployment.annotations.Record;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.NativeImageEnableAllCharsetsBuildItem;
-import io.quarkus.deployment.builditem.NativeImageFeatureBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceBuildItem;
-import io.quarkus.deployment.builditem.nativeimage.NativeImageResourceDirectoryBuildItem;
-import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedClassBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ServiceProviderBuildItem;
 import io.quarkus.deployment.util.ServiceUtil;
 import io.quarkus.tika.TikaParseException;
 import io.quarkus.tika.runtime.TikaConfiguration;
 import io.quarkus.tika.runtime.TikaParserProducer;
 import io.quarkus.tika.runtime.TikaRecorder;
-import io.quarkus.tika.runtime.graal.TikaFeature;
 
 public class TikaProcessor {
 
@@ -60,11 +56,6 @@ public class TikaProcessor {
     }
 
     @BuildStep
-    NativeImageFeatureBuildItem tikaParsersFeature() {
-        return new NativeImageFeatureBuildItem(TikaFeature.class);
-    }
-
-    @BuildStep
     AdditionalBeanBuildItem beans() {
         return AdditionalBeanBuildItem.unremovableOf(TikaParserProducer.class);
     }
@@ -78,13 +69,6 @@ public class TikaProcessor {
     }
 
     @BuildStep
-    public void registerRuntimeInitializedClasses(BuildProducer<RuntimeInitializedClassBuildItem> resource) {
-        //org.apache.tika.parser.pdf.PDFParser (https://issues.apache.org/jira/browse/PDFBOX-4548)
-        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.pdfbox.pdmodel.font.PDType1Font"));
-        resource.produce(new RuntimeInitializedClassBuildItem("org.apache.pdfbox.text.LegacyPDFStreamEngine"));
-    }
-
-    @BuildStep
     public void registerTikaCoreResources(BuildProducer<NativeImageResourceBuildItem> resource) {
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/mime/tika-mimetypes.xml"));
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/parser/external/tika-external-parsers.xml"));
@@ -93,14 +77,6 @@ public class TikaProcessor {
     @BuildStep
     public void registerTikaParsersResources(BuildProducer<NativeImageResourceBuildItem> resource) {
         resource.produce(new NativeImageResourceBuildItem("org/apache/tika/parser/pdf/PDFParser.properties"));
-    }
-
-    @BuildStep
-    public void registerPdfBoxResources(BuildProducer<NativeImageResourceDirectoryBuildItem> resource) {
-        resource.produce(new NativeImageResourceDirectoryBuildItem("org/apache/pdfbox/resources/afm"));
-        resource.produce(new NativeImageResourceDirectoryBuildItem("org/apache/pdfbox/resources/glyphlist"));
-        resource.produce(new NativeImageResourceDirectoryBuildItem("org/apache/fontbox/cmap"));
-        resource.produce(new NativeImageResourceDirectoryBuildItem("org/apache/fontbox/unicode"));
     }
 
     @BuildStep
