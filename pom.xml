@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.tika</groupId>
     <artifactId>quarkus-tika-parent</artifactId>
-    <version>2.1.0</version>
+    <version>999-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Quarkus - Tika - Parent</name>
     <modules>
@@ -19,7 +19,7 @@
         <connection>scm:git:git@github.com:quarkiverse/quarkus-tika.git</connection>
         <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-tika.git</developerConnection>
         <url>https://github.com/quarkiverse/quarkus-tika</url>
-      <tag>2.1.0</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <quarkus.version>3.18.2</quarkus.version>
