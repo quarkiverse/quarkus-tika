@@ -16,7 +16,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.angusmail</groupId>
-            <artifactId>quarkus-angus-mail</artifactId>
+            <artifactId>quarkus-angus-mail-deployment</artifactId>
             <version>${quarkus.angus-mail.version}</version>
         </dependency>
         <dependency>
