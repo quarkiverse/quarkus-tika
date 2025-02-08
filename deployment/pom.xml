@@ -14,9 +14,10 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc-deployment</artifactId>
         </dependency>
-         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-mailer-deployment</artifactId>
+        <dependency>
+            <groupId>io.quarkiverse.angusmail</groupId>
+            <artifactId>quarkus-angus-mail</artifactId>
+            <version>${quarkus.angus-mail.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.poi</groupId>
