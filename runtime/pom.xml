@@ -20,16 +20,16 @@
             <artifactId>quarkus-apache-httpclient</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.angusmail</groupId>
-            <artifactId>quarkus-angus-mail</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.quarkiverse.poi</groupId>
             <artifactId>quarkus-poi</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.pdfbox</groupId>
             <artifactId>quarkus-pdfbox</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.mail</groupId>
+            <artifactId>jakarta.mail-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
