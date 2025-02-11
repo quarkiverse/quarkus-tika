@@ -79,6 +79,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://thejavaguy.org/"><img src="https://avatars.githubusercontent.com/u/11942401?v=4?s=100" width="100px;" alt="Ivan Milosavljević"/><br /><sub><b>Ivan Milosavljević</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=TheJavaGuy" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://foivos.zakkak.net"><img src="https://avatars.githubusercontent.com/u/1435395?v=4?s=100" width="100px;" alt="Foivos"/><br /><sub><b>Foivos</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-tika/commits?author=zakkak" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hamburml"><img src="https://avatars.githubusercontent.com/u/7239350?v=4?s=100" width="100px;" alt="Michael Hamburger"/><br /><sub><b>Michael Hamburger</b></sub></a><br /><a href="#ideas-hamburml" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
