@@ -16,6 +16,17 @@ It is a replacement for the `quarkus-tika` extension originally part of the Quar
 
 The documentation for this extension can be found [here](https://quarkiverse.github.io/quarkiverse-docs/quarkus-tika/dev/index.html).
 
+## Versioning
+
+There are multiple versions available please check which one for your Quarkus release version.
+
+| Extension Version | Quarkus Version |
+| --- | --- |
+| ![2.0.x](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.0&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.15+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.15.0) |
+| ![latest](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.1&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.18+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.18.0) |
+
+
+
 ## Docker
 
 When building native images in Docker using the standard Quarkus Docker configuration files some additional features need to be
