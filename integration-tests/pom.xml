@@ -95,18 +95,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>com.github.luben</groupId>
-                    <artifactId>zstd-jni</artifactId>
-                    <version>1.5.7-4</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.tukaani</groupId>
-                    <artifactId>xz</artifactId>
-                    <version>1.10</version>
-                </dependency>
-            </dependencies>
             <properties>
                 <quarkus.package.type>native</quarkus.package.type>
                 <quarkus.native.additional-build-args>
