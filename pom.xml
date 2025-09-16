@@ -25,7 +25,7 @@
         <quarkus.version>3.20.2</quarkus.version>
         <quarkus.pdfbox.version>1.1.1</quarkus.pdfbox.version>
         <quarkus.poi.version>2.1.2</quarkus.poi.version>
-        <tika.version>3.2.2</tika.version>
+        <tika.version>3.2.3</tika.version>
     </properties>
     <dependencyManagement>
         <dependencies>
