@@ -9,6 +9,7 @@ metadata:
   - "miscellaneous"
   guide: https://quarkiverse.github.io/quarkiverse-docs/quarkus-tika/dev/index.html
   icon-url: "https://www.apache.org/foundation/press/kit/poweredBy/Apache_PoweredBy.svg"
+  lib-ga: org.apache.tika:tika-core[https://tika.apache.org/]
   status: "stable"
   config:
   - "quarkus.tika."
