@@ -34,11 +34,11 @@ installed to support Apache POI.  Specifically font information is not included 
 simply add these lines to your `DockerFile.native` file:
 
 ```shell
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9
+FROM registry.access.redhat.com/ubi8/ubi-minimal:9.7
 
-######################### Set up environment for POI #############################
-RUN microdnf update && microdnf install freetype fontconfig && microdnf clean all
-######################### Set up environment for POI #############################
+######################### Set up environment for POI ##################################
+RUN microdnf update -y && microdnf install -y freetype fontconfig && microdnf clean all
+######################### Set up environment for POI ##################################
 
 WORKDIR /work/
 RUN chown 1001 /work \
