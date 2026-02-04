@@ -23,7 +23,7 @@
   </scm>
     <properties>
         <quarkus.version>3.27.1</quarkus.version>
-        <quarkus.pdfbox.version>1.2.0</quarkus.pdfbox.version>
+        <quarkus.pdfbox.version>1.2.1</quarkus.pdfbox.version>
         <quarkus.poi.version>2.2.1</quarkus.poi.version>
         <tika.version>3.2.3</tika.version>
     </properties>
