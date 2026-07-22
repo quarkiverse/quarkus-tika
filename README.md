@@ -23,8 +23,8 @@ There are multiple versions available please check which one for your Quarkus re
 | Extension Version | Quarkus Version |
 | --- | --- |
 | ![2.0.x](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.0&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.15+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.15.0) |
-| ![latest](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.1&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.18+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.18.0) |
-
+| ![2.1.x](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.1&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.18+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.18.0) |
+| ![latest](https://img.shields.io/maven-central/v/io.quarkiverse.tika/quarkus-tika?versionPrefix=2.3&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.27+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.27.0) |
 
 
 ## Docker
