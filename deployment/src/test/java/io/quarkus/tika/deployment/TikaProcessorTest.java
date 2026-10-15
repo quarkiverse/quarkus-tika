@@ -14,12 +14,12 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
-import io.quarkus.test.QuarkusUnitTest;
+import io.quarkus.test.QuarkusExtensionTest;
 
 public class TikaProcessorTest {
 
     @RegisterExtension
-    static final QuarkusUnitTest quarkusUnitTest = new QuarkusUnitTest();
+    static final QuarkusExtensionTest quarkusUnitTest = new QuarkusExtensionTest();
 
     @Test
     public void testPDFParserName() throws Exception {

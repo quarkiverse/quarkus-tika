@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse</groupId>
         <artifactId>quarkiverse-parent</artifactId>
-        <version>23</version>
+        <version>26</version>
     </parent>
     <groupId>io.quarkiverse.tika</groupId>
     <artifactId>quarkus-tika-parent</artifactId>
@@ -22,9 +22,9 @@
       <tag>HEAD</tag>
   </scm>
     <properties>
-        <quarkus.version>3.27.1</quarkus.version>
-        <quarkus.pdfbox.version>1.2.3</quarkus.pdfbox.version>
-        <quarkus.poi.version>2.2.1</quarkus.poi.version>
+        <quarkus.version>4.0.0.Beta1</quarkus.version>
+        <quarkus.pdfbox.version>2.0.0.Beta1</quarkus.pdfbox.version>
+        <quarkus.poi.version>3.0.0.Beta1</quarkus.poi.version>
         <tika.version>3.3.2</tika.version>
     </properties>
     <dependencyManagement>
