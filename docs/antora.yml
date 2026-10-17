@@ -1,5 +1,5 @@
 name: quarkus-tika
 title: Tika
-version: dev
+version: 2.x
 nav:
   - modules/ROOT/nav.adoc
